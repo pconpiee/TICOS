@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TICOS Strasbourg — Ministry Formation Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0e0c0a;--surface:#181410;--card:#201c17;--border:#2c2720;
+  --ink:#f0ead8;--soft:#c4b99a;--muted:#7a6f5e;--dim:#3a3028;
+  --gold:#c9993a;--gold-dim:#5a3e12;--gold-glow:#f0c060;
+  --rose:#b87060;--rose-dim:#4a2018;--teal:#5a9e8a;--teal-dim:#1a4030;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.6}
+
+.hero{text-align:center;padding:5rem 1.5rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(ellipse at center,#3a2a0a 0%,transparent 70%);pointer-events:none;opacity:.5}
+.hero-eye{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:14px}
+.hero-eye::before,.hero-eye::after{content:'';width:40px;height:1px;background:var(--gold-dim)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,6vw,3.8rem);font-weight:300;color:var(--ink);line-height:1.1;margin-bottom:1rem;position:relative}
+.hero h1 em{font-style:italic;color:var(--gold-glow)}
+.hero-sub{font-size:15px;color:var(--muted);max-width:520px;margin:0 auto 2.5rem;line-height:1.8}
+.church-tag{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:7px 18px;font-size:12px;color:var(--soft)}
+.ct-dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+
+.rule{display:flex;align-items:center;justify-content:center;gap:16px;margin:3rem auto;max-width:500px;padding:0 1.5rem}
+.rule::before,.rule::after{content:'';flex:1;height:1px;background:var(--border)}
+.rule-icon{width:20px;height:20px;border:1px solid var(--gold-dim);border-radius:50%;flex-shrink:0}
+
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:900px;margin:0 auto 4rem;padding:0 1.5rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;text-decoration:none;display:block;transition:border-color .25s,transform .2s;position:relative}
+.tool-card:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
+.tool-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tc-gold::before{background:linear-gradient(to right,var(--gold-dim),var(--gold))}
+.tc-rose::before{background:linear-gradient(to right,var(--rose-dim),var(--rose))}
+
+.tc-top{padding:1.75rem 1.5rem 1.25rem}
+.tc-tag{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:3px 10px;border-radius:10px;display:inline-block;margin-bottom:1rem;border:1px solid}
+.tct-gold{color:var(--gold);border-color:var(--gold-dim);background:#1a1205}
+.tct-rose{color:var(--rose);border-color:var(--rose-dim);background:#1a0e08}
+.tc-top h2{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:.5rem}
+.tc-top .tc-sub{font-size:13px;color:var(--muted);line-height:1.65}
+
+.tc-meta{padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:8px}
+.tc-pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--muted)}
+
+.tc-cta{padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.tc-cta span{font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.tc-cta .arr{font-size:18px;transition:transform .2s}
+.tool-card:hover .arr{transform:translateX(4px)}
+.tc-gold .tc-cta span,.tc-gold .tc-cta .arr{color:var(--gold)}
+.tc-rose .tc-cta span,.tc-rose .tc-cta .arr{color:var(--rose)}
+
+.about{max-width:620px;margin:0 auto 5rem;padding:0 1.5rem;text-align:center}
+.about h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--soft);margin-bottom:1rem}
+.about p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:.75rem}
+.verse-block{margin:2rem 0;padding:1.25rem 1.5rem;background:var(--card);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:0 10px 10px 0;text-align:left}
+.verse-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--soft);line-height:1.8;margin-bottom:.3rem}
+.verse-block cite{font-size:11px;font-style:normal;color:var(--muted);letter-spacing:.06em;font-family:'Jost',sans-serif}
+
+footer{text-align:center;padding:2rem 1.5rem 3rem;border-top:1px solid var(--border)}
+footer p{font-size:12px;color:var(--dim);line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eye">TICOS Strasbourg</div>
+  <h1>Formation<br>Resources for<br><em>the Church</em></h1>
+  <p class="hero-sub">Tools for those being formed by Christ — to lead, to love, and to build life together in his name</p>
+  <div class="church-tag"><span class="ct-dot"></span>Trinity International Church of Strasbourg</div>
+</div>
+
+<div class="rule"><div class="rule-icon"></div></div>
+
+<div class="tools">
+
+  <a class="tool-card tc-gold" href="leadership-formation.html">
+    <div class="tc-top">
+      <span class="tc-tag tct-gold">Leader Formation</span>
+      <h2>Called to Lead,<br>Formed to Serve</h2>
+      <p class="tc-sub">Six sessions for university and masters students being raised up as ministry leaders — in and out of season. Built for an elder and three rising leaders to walk through together.</p>
+    </div>
+    <div class="tc-meta">
+      <span class="tc-pill">6 Sessions</span>
+      <span class="tc-pill">Self-study + Group</span>
+      <span class="tc-pill">John 15 · Romans 8 · Hebrews 13</span>
+    </div>
+    <div class="tc-cta"><span>Begin Formation</span><span class="arr">→</span></div>
+  </a>
+
+  <a class="tool-card tc-rose" href="premarriage-counseling.html">
+    <div class="tc-top">
+      <span class="tc-tag tct-rose">Pre-Marriage</span>
+      <h2>Before You<br>Say I Do</h2>
+      <p class="tc-sub">A Christ-centered, Spirit-led pre-marriage counseling guide integrating Scripture, peer-reviewed research, attachment theory, and trauma-informed pastoral care across six deep sessions.</p>
+    </div>
+    <div class="tc-meta">
+      <span class="tc-pill">6 Sessions</span>
+      <span class="tc-pill">Couple + Counselor</span>
+      <span class="tc-pill">Genesis · Song of Songs · Ephesians 5</span>
+    </div>
+    <div class="tc-cta"><span>Begin Preparation</span><span class="arr">→</span></div>
+  </a>
+
+</div>
+
+<div class="about">
+  <h3>How to use these resources</h3>
+  <p>Each tool is a standalone web app — no login, no account, no installation. Open it in any browser on any device. Your reflection notes save privately to your own device and are never sent anywhere.</p>
+  <p>The leader formation guide is designed to be completed individually first, then discussed as a group of four. The pre-marriage guide is designed for a couple to work through privately, then bring into a session with their counselor or pastor.</p>
+  <div class="verse-block">
+    <p>"And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together, as some are in the habit of doing, but encouraging one another — and all the more as you see the Day approaching."</p>
+    <cite>— Hebrews 10:24–25</cite>
+  </div>
+  <p>These are not programmes. They are companions for the formation that only the Spirit can do — in people who are willing to be known, shaped, and sent.</p>
+</div>
+
+<footer>
+  <p>Trinity International Church of Strasbourg &nbsp;·&nbsp; <a href="leadership-formation.html">Leader Formation</a> &nbsp;·&nbsp; <a href="premarriage-counseling.html">Pre-Marriage</a></p>
+  <p style="margin-top:.5rem">"He must become greater; I must become less." — John 3:30</p>
+</footer>
+
+</body>
+</html>
